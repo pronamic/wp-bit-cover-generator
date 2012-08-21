@@ -54,18 +54,31 @@ function bit_cover_generator_init() {
 
 add_action( 'init', 'bit_cover_generator_init' );
 
+function bit_cover_generator_preview() {
+	if ( is_user_logged_in() ) {
+		global $bit_cover_generator;
+
+		if ( $bit_cover_generator->has_background() ) {
+			include 'templates/preview.php';
+		}
+	}
+}
+
+function bit_cover_generator_has_background() {
+	global $bit_cover_generator;
+
+	return $bit_cover_generator->has_background();
+}
+
 function bit_cover_generator() {
 	if ( is_user_logged_in() ) {
 		global $bit_cover_generator, $bit_cover;
 	
-		echo '<div id="bit-cover">';
 		if ( $bit_cover_generator->has_background() ) {
 			include 'templates/input-other.php';
-			include 'templates/preview.php';
 		} else {
 			include 'templates/input-background.php';
 		}
-		echo '</div>';
 	}
 }
 
