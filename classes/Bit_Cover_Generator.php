@@ -317,6 +317,8 @@ class Bit_Cover_Generator {
 	private function addCoverMeta() {
 		$id = $this->coverId;
 
+		update_post_meta($id, '_bit_cover_font_id', $this->cover->font_id );
+
 		update_post_meta($id, '_bit_cover_title', $this->cover->title );
 		update_post_meta($id, '_bit_cover_title_color', $this->cover->title_color );
 						
