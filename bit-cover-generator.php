@@ -20,20 +20,97 @@ require_once ABSPATH . 'wp-admin/includes/image.php';
 require_once ABSPATH . 'wp-admin/includes/file.php';
 require_once ABSPATH . 'wp-admin/includes/media.php';
 
+require_once 'classes/Bit_Cover.php';
 require_once 'classes/Bit_Cover_Generator.php';
+require_once 'classes/Bit_Cover_Plugin.php';
 
-function bit_cover_generator() {
-	global $bit_cover_generator;
+function bit_cover_generator_init() {
+	if ( is_user_logged_in() ) {
+		global $bit_cover_generator, $bit_cover;
+	
+		$bit_cover_generator = new Bit_Cover_Generator();
+		$bit_cover_generator->overlay_file = plugin_dir_path( __FILE__ ) . 'includes/images/overlay.png';
+		$bit_cover_generator->fonts_dir = plugin_dir_path( __FILE__ ) . 'includes/fonts/';
 
-	$bit_cover_generator = new Bit_Cover_Generator();
-
-	if( isset( $_POST['upload'] ) ) {
-		$ok = $bit_cover_generator->check_background_upload();
-
-		var_dump( $ok );
+		$bit_cover = $bit_cover_generator->cover;
+	
+		$bit_cover_generator->collectInput();
+	
+		if( isset( $_POST['upload'] ) ) {
+			$ok = true;
+		
+			if($ok) $ok = $bit_cover_generator->is_background_uploaded();
+			if($ok) $ok = $bit_cover_generator->is_background_displayable();
+			if($ok) $ok = $bit_cover_generator->upload_background_bits();
+			if($ok) $ok = $bit_cover_generator->create_background_attachment();
+			if($ok) $ok = $bit_cover_generator->determine_crop();
+		}
+	
+		if(isset($_POST['submit'])) {
+			$bit_cover_generator->generate();
+		}
 	}
-
-	include 'templates/input-background.php';
 }
 
+add_action( 'init', 'bit_cover_generator_init' );
 
+function bit_cover_generator() {
+	if ( is_user_logged_in() ) {
+		global $bit_cover_generator, $bit_cover;
+	
+		echo '<div id="bit-cover">';
+		if ( $bit_cover_generator->has_background() ) {
+			include 'templates/input-other.php';
+			include 'templates/preview.php';
+		} else {
+			include 'templates/input-background.php';
+		}
+		echo '</div>';
+	}
+}
+
+function bit_cover_generator_scripts() {
+	wp_enqueue_script(
+		'jquery.imgareaselect',
+		plugins_url( 'includes/jquery.imgareaselect/scripts/jquery.imgareaselect.js' , __FILE__ ) ,
+		array('jquery')
+	);
+
+	wp_enqueue_script(
+		'really-simple-color-picker',
+		plugins_url( 'includes/really-simple-color-picker/jquery.colorPicker.js' , __FILE__ ) ,
+		array('jquery')
+	);
+
+	wp_enqueue_script(
+		'bit-cover-generator',
+		plugins_url( 'includes/js/generator.js' , __FILE__ ) ,
+		array('jquery', 'jquery.imgareaselect', 'really-simple-color-picker')
+	);
+
+	wp_enqueue_style(
+		'jquery.imgareaselect',
+		plugins_url( 'includes/jquery.imgareaselect/css/imgareaselect-default.css' , __FILE__ ) 
+	);
+
+	wp_enqueue_style(
+		'bit-cover-generator' ,
+		plugins_url( 'includes/css/generator.css' , __FILE__ ) 
+	);
+
+	wp_enqueue_style(
+		'really-simple-color-picker',
+		plugins_url( 'includes/really-simple-color-picker/colorPicker.css' , __FILE__ ) 
+	);
+}
+
+add_action( 'wp_enqueue_scripts', 'bit_cover_generator_scripts' );
+
+function bit_cover_generator_setup() {
+	add_image_size( 'bit-cover-preview', 575, 733, true );
+	add_image_size( 'bit-cover-select', 250, 9999 );
+}
+
+add_action( 'after_setup_theme', 'bit_cover_generator_setup' );
+
+Bit_Cover_Plugin::bootstrap( __FILE__ );
