@@ -87,7 +87,7 @@ class Bit_Cover_Generator {
 						$this->add_error( __( 'Missing a temporary folder.', 'bit_cover_generator' ) );
 						break;
 					case UPLOAD_ERR_CANT_WRITE : 
-						$this->addError( __( 'Failed to write file to disk.', 'bit_cover_generator' ) );
+						$this->add_error( __( 'Failed to write file to disk.', 'bit_cover_generator' ) );
 						break;
 					case UPLOAD_ERR_CANT_WRITE : 
 						$this->add_error( __( 'A PHP extension stopped the file upload. PHP does not provide a way to ascertain which extension caused the file upload to stop; examining the list of loaded extensions with phpinfo() may help.', 'bit_cover_generator' ) );
