@@ -13,14 +13,14 @@ global $bit_cover_generator;
 
 <p>Het kan even duren voordat je achtergrond geupload is.</p>
 
-<?php if( false ): //$bit_cover_generator->hasErrors()): ?>
+<?php if ( $bit_cover_generator->has_errors() ): ?>
 
 	<div class="error">
 		<ul>
-			<?php foreach($coverGenerator->getErrors() as $error): ?>
-			<li>
-				<?php echo $error; ?>
-			</li>
+			<?php foreach ( $bit_cover_generator->get_errors() as $error ): ?>
+				<li>
+					<?php echo $error; ?>
+				</li>
 			<?php endforeach; ?>
 		</ul>
 	</div>
