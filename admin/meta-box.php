@@ -1,4 +1,7 @@
 <dl>
+	<dt><?php _e( 'Font ID', 'bit_cover_generator' ); ?></dt>
+	<dd><?php echo get_post_meta( $post->ID, '_bit_cover_font_id', true ); ?></dd>
+
 	<dt><?php _e( 'Title', 'bit_cover_generator' ); ?></dt>
 	<dd><?php echo get_post_meta( $post->ID, '_bit_cover_title', true ); ?></dd>
 
