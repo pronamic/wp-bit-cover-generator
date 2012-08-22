@@ -35,8 +35,8 @@ jQuery(document).ready(function($) {
 
 		$(".color-field input").colorPicker();
 
-		var coverWidth = 575;
-		var coverHeight = 733;
+		var coverWidth = 418;
+		var coverHeight = 545;
 	
 		var backgroundAreaSelect = $("#background-area-select");
 		var previewBackground = $("#preview-background");

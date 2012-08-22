@@ -11,7 +11,7 @@
 class Bit_Cover_Generator {
 	const GENERATE_WIDTH = 1200;
 	
-	const GENERATE_HEIGHT = 1500;
+	const GENERATE_HEIGHT = 1564;
 
 	/**
 	 * Errors

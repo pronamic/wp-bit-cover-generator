@@ -120,8 +120,7 @@ function bit_cover_generator_scripts() {
 add_action( 'wp_enqueue_scripts', 'bit_cover_generator_scripts' );
 
 function bit_cover_generator_setup() {
-	add_image_size( 'bit-cover-preview', 575, 733, true );
-	add_image_size( 'bit-cover-select', 250, 9999 );
+	add_image_size( 'bit-cover-select', 376, 9999 );
 }
 
 add_action( 'after_setup_theme', 'bit_cover_generator_setup' );
