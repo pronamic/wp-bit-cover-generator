@@ -354,9 +354,9 @@ class Bit_Cover_Generator {
 	}
 
 	private function addBackgroundToCanvas() {
-		$path = get_attached_file($this->background_attachment_id);
+		$post = get_post( $this->background_attachment_id );
 
-		$background = imagecreatefromjpeg($path);
+		$background = load_image_to_edit( $this->background_attachment_id, $post->post_mime_type, 'full' );
 
 		$cropX = $this->cover->crop_x1;
 		$cropY = $this->cover->crop_y1;
