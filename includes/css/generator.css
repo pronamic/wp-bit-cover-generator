@@ -134,9 +134,9 @@
 }
 
 #preview-title {
-	font-size: 22px;
+	font-size: 20px;
 
-	top: 12px;
+	top: 10px;
 	right: 0;
 	left: 0;
 
@@ -145,25 +145,25 @@
 
 #preview-eyecatcher ,
 #preview-eyecatcher {
-	top: 300px;
-	left: 300px;
+	top: 250px;
+	left: 180px;
 
 	width: 200px;
 } 
 
 #preview-eyecatcher-title {
-	font-size: 24px;
+	font-size: 22px;
 }
 
 #preview-eyecatcher-text {
-	font-size: 20px;
+	font-size: 18px;
 }
 
 #preview-footer {
-	bottom: 50px;
-	left: 50px;
+	bottom: 80px;
+	left: 30px;
 
-	width: 430px;
+	width: 400px;
 }
 
 #preview-footer-title {
