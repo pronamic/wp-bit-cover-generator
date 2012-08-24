@@ -14,7 +14,8 @@ global $bit_cover_generator;
 			<label for="background">
 				<?php _e( 'Background image:', 'bit_cover_generator' ); ?>
 			</label>
-		
+			
+			<input type="hidden" name="MAX_FILE_SIZE" value="3000000" />
 			<input id="background" name="background" type="file" />
 		</p>
 	
@@ -36,6 +37,6 @@ global $bit_cover_generator;
 			<button class="btn important" type="submit" name="upload"><?php _e( 'Upload background', 'bit_cover_generator' ); ?></button>
 		</p>
 		
-		<p class="note"><?php _e( '* It may take time before your background is uploaded.', 'bit_cover_generator' ); ?></p>
+		<p class="note"><?php _e( '* It may take time before your background is uploaded. We advise you to upload an image that is smaller than 2mb.', 'bit_cover_generator' ); ?></p>
 	</form>
 </div>
