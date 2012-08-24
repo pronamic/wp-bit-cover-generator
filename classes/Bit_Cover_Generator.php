@@ -89,33 +89,33 @@ class Bit_Cover_Generator {
 			} else {
 				switch ( $this->background_file['error'] ) {
 					case UPLOAD_ERR_INI_SIZE :
-						$this->add_error( __( 'The uploaded file exceeds the upload_max_filesize directive in php.ini', 'bit_cover_generator' ) );
+						$this->add_error( __( 'Het upgeloade bestand overschrijdt de maximale uploadgrootte.', 'bit_cover_generator' ) );
 						break;
 					case UPLOAD_ERR_FORM_SIZE : 
-						$this->add_error( __( 'The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form.', 'bit_cover_generator' ) );
+						$this->add_error( __( 'Het upgeloade bestand overschrijdt de maximale uploadgrootte.', 'bit_cover_generator' ) );
 						break;
 					case UPLOAD_ERR_PARTIAL :
-						$this->add_error( __( 'The uploaded file was only partially uploaded.', 'bit_cover_generator' ) );
+						$this->add_error( __( 'Het upgeload bestand is slechts deels upgeload.', 'bit_cover_generator' ) );
 						break;
 					case UPLOAD_ERR_NO_FILE : 
-						$this->add_error( __( 'No file was uploaded.', 'bit_cover_generator' ) );
+						$this->add_error( __( 'Er is geen bestand geselecteerd.', 'bit_cover_generator' ) );
 						break;
 					case UPLOAD_ERR_NO_TMP_DIR : 
-						$this->add_error( __( 'Missing a temporary folder.', 'bit_cover_generator' ) );
+						$this->add_error( __( 'De tijdelijke folder mist.', 'bit_cover_generator' ) );
 						break;
 					case UPLOAD_ERR_CANT_WRITE : 
-						$this->add_error( __( 'Failed to write file to disk.', 'bit_cover_generator' ) );
+						$this->add_error( __( 'Er ging iets fout bij het opslaan van de afbeelding.', 'bit_cover_generator' ) );
 						break;
 					case UPLOAD_ERR_CANT_WRITE : 
-						$this->add_error( __( 'A PHP extension stopped the file upload. PHP does not provide a way to ascertain which extension caused the file upload to stop; examining the list of loaded extensions with phpinfo() may help.', 'bit_cover_generator' ) );
+						$this->add_error( __( 'Een PHP extenstie heeft de upload gestopt.', 'bit_cover_generator' ) );
 						break;
 					default : 
-						$this->add_error( __( 'No file was uploaded.', 'bit_cover_generator' ) );
+						$this->add_error( __( 'Er is geen bestand geupload.', 'bit_cover_generator' ) );
 						break;
 				}				
 			}
 		} else {
-			$this->add_error(__('The background image is not specified.', 'bit_cover_generator' ) );
+			$this->add_error( __( 'De achtergrond afbeelding is niet geselecteerd.', 'bit_cover_generator' ) );
 		}
 
 		return $result;
@@ -149,7 +149,7 @@ class Bit_Cover_Generator {
 
 			$result = true;
 		} else {
-			$this->add_error( __('Somehting went wrong while uploading the background image.', 'bitcoveractie' ) );
+			$this->add_error( __('Somehting went wrong while uploading the background image.', 'bit_cover_generator' ) );
 			$this->add_error( $upload_info['error'] );
 		}
 
