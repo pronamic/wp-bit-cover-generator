@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Bit Cover Generator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-21 13:55+0100\n"
-"PO-Revision-Date: 2012-08-21 13:56+0100\n"
-"Last-Translator: Remco Tolsma <remco@pronamic.nl>\n"
+"POT-Creation-Date: 2012-08-23 10:18+0100\n"
+"PO-Revision-Date: 2012-08-23 10:18+0100\n"
+"Last-Translator: K.Tolsma <kareljan@pronamic.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,150 +16,171 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: templates/input-background.php:9
-msgid "Choose your background:"
-msgstr "Kies uw achtergrond:"
+#: templates/input-background.php:8
+msgid "Step 1 - Choose your background"
+msgstr "Stap 1 - Kies je achtergrond"
 
-#: templates/input-background.php:32
+#: templates/input-background.php:15
+msgid "Background image:"
+msgstr "Achtergrond afbeelding:"
+
+#: templates/input-background.php:37
 msgid "Upload background"
 msgstr "Upload achtergrond"
 
+#: templates/input-background.php:40
+msgid "* It may take time before your background is uploaded. We advise you to upload an image that is smaller than 2mb."
+msgstr "* Het kan even duren voordat je achtergrond upgeload is. We adviseren je om een afbeelding up te loaden die niet groter is dan 2mb."
+
 #: templates/input-other.php:8
+msgid "Step 2 - Make your cover"
+msgstr "Stap 2 - Maak je cover"
+
+#: templates/input-other.php:14
 msgid "Background crop:"
 msgstr "Achtergrond uitsnede:"
 
-#: templates/input-other.php:27
+#: templates/input-other.php:35
 msgid "Font:"
 msgstr "Lettertype:"
 
-#: templates/input-other.php:49
+#: templates/input-other.php:59
 msgid "Title:"
 msgstr "Titel:"
 
-#: templates/input-other.php:53
-#: templates/input-other.php:66
-#: templates/input-other.php:76
-#: templates/input-other.php:86
+#: templates/input-other.php:64
+#: templates/input-other.php:81
+#: templates/input-other.php:93
+#: templates/input-other.php:105
 msgid "Color:"
 msgstr "Kleur:"
 
-#: templates/input-other.php:59
+#: templates/input-other.php:71
 msgid "Eyecatcher title:"
 msgstr "Eyecatcher titel:"
 
-#: templates/input-other.php:62
+#: templates/input-other.php:76
 msgid "Eyecatcher text:"
 msgstr "Eyecatcher tekst:"
 
-#: templates/input-other.php:72
+#: templates/input-other.php:88
 msgid "Footer title:"
 msgstr "Voettekst titel:"
 
-#: templates/input-other.php:82
+#: templates/input-other.php:100
 msgid "Footer text:"
 msgstr "Voettekst tekst:"
 
-#: templates/input-other.php:106
+#: templates/input-other.php:126
 msgid "Generate cover"
 msgstr "Genereer cover"
 
 #: admin/meta-box.php:2
-#: admin/meta-box.php:11
-#: admin/meta-box.php:25
+msgid "Font ID"
+msgstr "Font ID"
+
+#: admin/meta-box.php:5
+#: admin/meta-box.php:14
+#: admin/meta-box.php:28
 msgid "Title"
 msgstr "Titel"
 
-#: admin/meta-box.php:5
-#: admin/meta-box.php:28
+#: admin/meta-box.php:8
+#: admin/meta-box.php:31
 msgid "Title Color"
 msgstr "Titel kleur"
 
-#: admin/meta-box.php:8
-#: admin/meta-box.php:22
+#: admin/meta-box.php:11
+#: admin/meta-box.php:25
 msgid "Footer"
 msgstr "Voettekst"
 
-#: admin/meta-box.php:14
-#: admin/meta-box.php:31
+#: admin/meta-box.php:17
+#: admin/meta-box.php:34
 msgid "Text"
 msgstr "Tekst"
 
-#: admin/meta-box.php:17
+#: admin/meta-box.php:20
 msgid "Color"
 msgstr "Kleur"
 
-#: admin/meta-box.php:34
+#: admin/meta-box.php:37
 msgid "Text Color"
 msgstr "Tekst kleur"
 
-#: admin/meta-box.php:39
+#: admin/meta-box.php:42
 msgid "Crop"
 msgstr "Uitsnede"
 
-#: admin/meta-box.php:42
+#: admin/meta-box.php:45
 msgid "X1"
 msgstr "X1"
 
-#: admin/meta-box.php:45
+#: admin/meta-box.php:48
 msgid "Y1"
 msgstr "Y1"
 
-#: admin/meta-box.php:48
+#: admin/meta-box.php:51
 msgid "X2"
 msgstr "X2"
 
-#: admin/meta-box.php:51
+#: admin/meta-box.php:54
 msgid "Y2"
 msgstr "Y2"
 
 #: classes/Bit_Cover_Generator.php:92
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
-msgstr ""
+msgstr "Het upgeload bestand overschrijdt de maximaal uploadgrootte."
 
 #: classes/Bit_Cover_Generator.php:95
-msgid "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form."
-msgstr ""
+msgid "Het upgeloade bestand overschrijdt de maximale uploadgrootte."
+msgstr "Het upgeloade bestand overschrijdt de maximale uploadgrootte."
 
 #: classes/Bit_Cover_Generator.php:98
 msgid "The uploaded file was only partially uploaded."
-msgstr ""
+msgstr "Het upgeload bestand is slechts deels upgelogd."
 
 #: classes/Bit_Cover_Generator.php:101
 #: classes/Bit_Cover_Generator.php:113
 msgid "No file was uploaded."
-msgstr ""
+msgstr "Er is geen bestand upgeload."
 
 #: classes/Bit_Cover_Generator.php:104
 msgid "Missing a temporary folder."
-msgstr ""
+msgstr "Temp folder niet aanwezig."
 
 #: classes/Bit_Cover_Generator.php:107
 msgid "Failed to write file to disk."
-msgstr ""
+msgstr "Er ging iets fout bij het opslaan van de afbeelding."
 
 #: classes/Bit_Cover_Generator.php:110
 msgid "A PHP extension stopped the file upload. PHP does not provide a way to ascertain which extension caused the file upload to stop; examining the list of loaded extensions with phpinfo() may help."
-msgstr ""
+msgstr "Een PHP extensie heeft de upload gestopt."
 
 #: classes/Bit_Cover_Generator.php:118
 msgid "The background image is not specified."
-msgstr ""
+msgstr "De achtergrond afbeelding is niet opgegeven."
 
 #: classes/Bit_Cover_Generator.php:132
 msgid "We can not work with the background you uploaded."
-msgstr ""
+msgstr "De achtergrond die je upgeload hebt is niet geschikt."
 
 #: classes/Bit_Cover_Generator.php:152
 msgid "Somehting went wrong while uploading the background image."
-msgstr ""
+msgstr "Er ging iets fout bij het uploaden van de afbeelding."
 
 #: classes/Bit_Cover_Generator.php:275
 msgid "The title can not be empty"
 msgstr "De titel kan niet leeg zijn"
 
-#: classes/Bit_Cover_Plugin.php:40
+#: classes/Bit_Cover_Plugin.php:53
 msgid "Bit Cover Generator"
 msgstr "Bit Cover generator"
+
+#~ msgid ""
+#~ "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified "
+#~ "in the HTML form."
+#~ msgstr "Het upgeload bestand overschrijdt de maximaal uploadgrootte."
 
 #~ msgid "Untitled Form"
 #~ msgstr "Formulier zonder titel"
@@ -779,10 +800,6 @@ msgstr "Bit Cover generator"
 #, fuzzy
 #~ msgid "Form Settings"
 #~ msgstr "Geen secties"
-
-#, fuzzy
-#~ msgid "Form ID"
-#~ msgstr "Formulier"
 
 #, fuzzy
 #~ msgid "Properties"
